@@ -1,0 +1,10 @@
+{
+ "download_date": "2026-10-29",
+ "world_bank_api": {},
+ "commodities": null,
+ "errors": [
+  "World Bank API failed: ProxyError(MaxRetryError(\"HTTPSConnectionPool(host='api.worldbank.org', port=443): Max retries exceeded with url: /v2/country/UZB;KAZ;KGZ;TJK;GEO;ARM;TUR;POL;ROU;EGY;MAR;NGA;KEN;GHA;ZAF;IND;PAK;BGD;IDN;PHL;VNM;THA;MYS;BRA;MEX;COL;PER;CHL/indicator/FP.CPI.TOTL.ZG?format=json&date=2000%3A2026&per_page=1000&page=1 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))\"))",
+  "Pink Sheet failed: ProxyError(MaxRetryError(\"HTTPSConnectionPool(host='www.worldbank.org', port=443): Max retries exceeded with url: /en/research/commodity-markets (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))\"))",
+  "FRED fallback failed: ProxyError(MaxRetryError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Max retries exceeded with url: /graph/fredgraph.csv?id=PFOODINDEXM (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))\"))"
+ ]
+}
