@@ -96,7 +96,7 @@ project for a non-specialist.
 
 Please cite the project and the data:
 
-> [Author name] (2026). *Do global commodity prices help forecast inflation?* GitHub
+> Dalerbek Ilhomov (2026). *Do global commodity prices help forecast inflation?* GitHub
 > repository, https://github.com/idahler07-dev/ML-Project-.
 
 > World Bank (2026). *World Development Indicators* and *World Bank Commodity Price Data
