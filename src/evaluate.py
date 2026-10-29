@@ -13,6 +13,7 @@ Outputs (results/tables/):
   comparisons_vs_m1.csv        every main model vs the M1 baseline, with tests
   robustness_checks.csv        the M2-vs-M1 comparison under other choices
   model_details.csv            chosen ridge alphas and fixed-effects notes
+  m2_coefficients_by_test_year.csv  M2 coefficients estimated in each training window
 """
 
 from pathlib import Path
@@ -22,7 +23,7 @@ import pandas as pd
 from scipy import stats
 
 from features import TARGET
-from models import ALL_MODELS, MAIN_MODELS, common_sample, fit_predict
+from models import ALL_MODELS, M2_FEATURES, MAIN_MODELS, common_sample, fit_ols, fit_predict
 
 ROOT = Path(__file__).resolve().parents[1]
 CLEAN_DIR = ROOT / "data" / "clean"
@@ -144,6 +145,28 @@ def compare(predictions: pd.DataFrame, model_a: str, model_b: str) -> dict:
     }
 
 
+def m2_coefficients_by_test_year(data: pd.DataFrame, predictions: pd.DataFrame) -> pd.DataFrame:
+    """The M2 coefficients that were actually used to forecast each test year.
+
+    Shows how the estimated effect of commodity prices changes as more years
+    enter the training data, next to the average actual and forecast inflation.
+    """
+    rows = []
+    for year, train, test in expanding_window_splits(data):
+        result, _ = fit_ols(train, M2_FEATURES, fixed_effects=False)
+        year_predictions = predictions[predictions["year"] == year]
+        mean_forecast = year_predictions.groupby("model")["forecast"].mean()
+        rows.append({
+            "test_year": year, "train_years": f"{train['year'].min()}-{year - 1}",
+            **{f"coef_{name}": value for name, value in result.params.items()},
+            "food_chg_lag1_value": test["food_chg_lag1"].iloc[0],
+            "energy_chg_lag1_value": test["energy_chg_lag1"].iloc[0],
+            "mean_actual": test[TARGET].mean(),
+            "mean_forecast_M1": mean_forecast["M1_baseline"],
+            "mean_forecast_M2": mean_forecast["M2_commodity"]})
+    return pd.DataFrame(rows)
+
+
 # ---------------------------------------------------------------- robustness
 
 def robustness_checks(features_table: pd.DataFrame, main_data: pd.DataFrame,
@@ -234,6 +257,9 @@ def main() -> dict:
     by_country = by_country.rename(columns={"M1_baseline": "MAE_M1", "M2_commodity": "MAE_M2"})
     by_country.sort_values("MAE_diff_M2_minus_M1").reset_index().to_csv(
         TABLES_DIR / "m2_vs_m1_by_country.csv", index=False)
+
+    m2_coefficients_by_test_year(data, predictions).to_csv(
+        TABLES_DIR / "m2_coefficients_by_test_year.csv", index=False)
 
     comparisons = pd.DataFrame([compare(predictions, name, "M1_baseline")
                                 for name in MAIN_MODELS if name != "M1_baseline"])
