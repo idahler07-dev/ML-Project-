@@ -38,6 +38,7 @@ INDICATORS = {
 
 START_YEAR = 2000
 WB_API = "https://api.worldbank.org/v2/country/{countries}/indicator/{indicator}"
+WB_META = "https://api.worldbank.org/v2/indicator/{indicator}"  # name, definition, original source
 
 # Page that links to the current Pink Sheet file.
 CMO_PAGE = "https://www.worldbank.org/en/research/commodity-markets"
@@ -66,10 +67,14 @@ def get(url: str, params=None, tries: int = 3, timeout: int = 60) -> requests.Re
     raise last_error
 
 
-def download_world_bank_indicator(indicator: str, end_year: int) -> list:
-    """Download one indicator for all countries, following every page."""
+def download_world_bank_indicator(indicator: str, end_year: int) -> tuple:
+    """Download one indicator for all countries, following every page.
+
+    Returns (records, lastupdated), where lastupdated is the World Bank's own
+    "last updated" date for the dataset.
+    """
     url = WB_API.format(countries=";".join(COUNTRIES), indicator=indicator)
-    records, page, pages = [], 1, 1
+    records, page, pages, lastupdated = [], 1, 1, None
     while page <= pages:
         params = {"format": "json", "date": f"{START_YEAR}:{end_year}",
                   "per_page": 1000, "page": page}
@@ -78,21 +83,30 @@ def download_world_bank_indicator(indicator: str, end_year: int) -> list:
         if not isinstance(payload, list) or len(payload) < 2 or payload[1] is None:
             raise ValueError(f"Unexpected World Bank API response for {indicator}: {payload}")
         pages = int(payload[0]["pages"])
+        lastupdated = payload[0].get("lastupdated")
         records.extend(payload[1])
         page += 1
-    return records
+    return records, lastupdated
 
 
 def download_country_data(log: dict) -> None:
     end_year = dt.date.today().year  # the API simply returns nothing for years without data
     for code in INDICATORS:
-        records = download_world_bank_indicator(code, end_year)
+        records, lastupdated = download_world_bank_indicator(code, end_year)
         path = RAW_DIR / f"wb_{code}_{today()}.json"
         path.write_text(json.dumps(records, indent=1))
-        log["world_bank_api"][code] = {"file": path.name, "records": len(records),
+
+        # Indicator metadata: official name, definition and original data source.
+        meta = get(WB_META.format(indicator=code), params={"format": "json"}).json()
+        meta_path = RAW_DIR / f"wb_{code}_metadata_{today()}.json"
+        meta_path.write_text(json.dumps(meta, indent=1))
+
+        log["world_bank_api"][code] = {"file": path.name, "metadata_file": meta_path.name,
+                                       "records": len(records), "lastupdated": lastupdated,
                                        "url": WB_API.format(countries=";".join(COUNTRIES),
                                                             indicator=code)}
-        print(f"  saved {path.name} ({len(records)} records)")
+        print(f"  saved {path.name} ({len(records)} records, World Bank last updated "
+              f"{lastupdated}) and {meta_path.name}")
 
 
 def find_pink_sheet_link() -> str:
