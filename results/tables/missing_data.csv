@@ -1,0 +1,117 @@
+country,country_name,variable,years_total,years_missing,missing_years
+ARM,Armenia,inflation,26,0,
+BGD,Bangladesh,inflation,26,0,
+BRA,Brazil,inflation,26,0,
+CHL,Chile,inflation,26,0,
+COL,Colombia,inflation,26,0,
+EGY,"Egypt, Arab Rep.",inflation,26,0,
+GEO,Georgia,inflation,26,0,
+GHA,Ghana,inflation,26,0,
+IDN,Indonesia,inflation,26,0,
+IND,India,inflation,26,0,
+KAZ,Kazakhstan,inflation,26,0,
+KEN,Kenya,inflation,26,0,
+KGZ,Kyrgyz Republic,inflation,26,0,
+MAR,Morocco,inflation,26,0,
+MEX,Mexico,inflation,26,0,
+MYS,Malaysia,inflation,26,0,
+NGA,Nigeria,inflation,26,0,
+PAK,Pakistan,inflation,26,0,
+PER,Peru,inflation,26,0,
+PHL,Philippines,inflation,26,0,
+POL,Poland,inflation,26,0,
+ROU,Romania,inflation,26,0,
+THA,Thailand,inflation,26,0,
+TJK,Tajikistan,inflation,26,1,2000
+TUR,Turkiye,inflation,26,0,
+UZB,Uzbekistan,inflation,26,11,2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010
+VNM,Viet Nam,inflation,26,0,
+ZAF,South Africa,inflation,26,0,
+ARM,Armenia,gdp_growth,26,0,
+BGD,Bangladesh,gdp_growth,26,0,
+BRA,Brazil,gdp_growth,26,0,
+CHL,Chile,gdp_growth,26,0,
+COL,Colombia,gdp_growth,26,0,
+EGY,"Egypt, Arab Rep.",gdp_growth,26,0,
+GEO,Georgia,gdp_growth,26,0,
+GHA,Ghana,gdp_growth,26,0,
+IDN,Indonesia,gdp_growth,26,0,
+IND,India,gdp_growth,26,0,
+KAZ,Kazakhstan,gdp_growth,26,0,
+KEN,Kenya,gdp_growth,26,0,
+KGZ,Kyrgyz Republic,gdp_growth,26,0,
+MAR,Morocco,gdp_growth,26,0,
+MEX,Mexico,gdp_growth,26,0,
+MYS,Malaysia,gdp_growth,26,0,
+NGA,Nigeria,gdp_growth,26,0,
+PAK,Pakistan,gdp_growth,26,0,
+PER,Peru,gdp_growth,26,0,
+PHL,Philippines,gdp_growth,26,0,
+POL,Poland,gdp_growth,26,0,
+ROU,Romania,gdp_growth,26,0,
+THA,Thailand,gdp_growth,26,0,
+TJK,Tajikistan,gdp_growth,26,0,
+TUR,Turkiye,gdp_growth,26,0,
+UZB,Uzbekistan,gdp_growth,26,0,
+VNM,Viet Nam,gdp_growth,26,0,
+ZAF,South Africa,gdp_growth,26,0,
+ARM,Armenia,fx_rate,26,0,
+BGD,Bangladesh,fx_rate,26,0,
+BRA,Brazil,fx_rate,26,0,
+CHL,Chile,fx_rate,26,0,
+COL,Colombia,fx_rate,26,0,
+EGY,"Egypt, Arab Rep.",fx_rate,26,0,
+GEO,Georgia,fx_rate,26,0,
+GHA,Ghana,fx_rate,26,0,
+IDN,Indonesia,fx_rate,26,0,
+IND,India,fx_rate,26,0,
+KAZ,Kazakhstan,fx_rate,26,0,
+KEN,Kenya,fx_rate,26,0,
+KGZ,Kyrgyz Republic,fx_rate,26,0,
+MAR,Morocco,fx_rate,26,0,
+MEX,Mexico,fx_rate,26,0,
+MYS,Malaysia,fx_rate,26,0,
+NGA,Nigeria,fx_rate,26,0,
+PAK,Pakistan,fx_rate,26,0,
+PER,Peru,fx_rate,26,0,
+PHL,Philippines,fx_rate,26,0,
+POL,Poland,fx_rate,26,0,
+ROU,Romania,fx_rate,26,0,
+THA,Thailand,fx_rate,26,0,
+TJK,Tajikistan,fx_rate,26,0,
+TUR,Turkiye,fx_rate,26,0,
+UZB,Uzbekistan,fx_rate,26,12,2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012
+VNM,Viet Nam,fx_rate,26,1,2025
+ZAF,South Africa,fx_rate,26,0,
+ARM,Armenia,fx_change,26,1,2000
+BGD,Bangladesh,fx_change,26,1,2000
+BRA,Brazil,fx_change,26,1,2000
+CHL,Chile,fx_change,26,1,2000
+COL,Colombia,fx_change,26,1,2000
+EGY,"Egypt, Arab Rep.",fx_change,26,1,2000
+GEO,Georgia,fx_change,26,1,2000
+GHA,Ghana,fx_change,26,1,2000
+IDN,Indonesia,fx_change,26,1,2000
+IND,India,fx_change,26,1,2000
+KAZ,Kazakhstan,fx_change,26,1,2000
+KEN,Kenya,fx_change,26,1,2000
+KGZ,Kyrgyz Republic,fx_change,26,1,2000
+MAR,Morocco,fx_change,26,1,2000
+MEX,Mexico,fx_change,26,1,2000
+MYS,Malaysia,fx_change,26,1,2000
+NGA,Nigeria,fx_change,26,1,2000
+PAK,Pakistan,fx_change,26,1,2000
+PER,Peru,fx_change,26,1,2000
+PHL,Philippines,fx_change,26,1,2000
+POL,Poland,fx_change,26,1,2000
+ROU,Romania,fx_change,26,1,2000
+THA,Thailand,fx_change,26,1,2000
+TJK,Tajikistan,fx_change,26,1,2000
+TUR,Turkiye,fx_change,26,1,2000
+UZB,Uzbekistan,fx_change,26,14,2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013
+VNM,Viet Nam,fx_change,26,2,2000 2025
+ZAF,South Africa,fx_change,26,1,2000
+WORLD,World (Pink Sheet),energy_chg,26,0,
+WORLD,World (Pink Sheet),agri_chg,26,0,
+WORLD,World (Pink Sheet),food_chg,26,0,
+WORLD,World (Pink Sheet),fert_chg,26,0,

@@ -1,0 +1,32 @@
+{
+ "download_date": "2026-10-29",
+ "world_bank_api": {
+  "FP.CPI.TOTL.ZG": {
+   "file": "wb_FP.CPI.TOTL.ZG_2026-10-29.json",
+   "metadata_file": "wb_FP.CPI.TOTL.ZG_metadata_2026-10-29.json",
+   "records": 728,
+   "lastupdated": "2026-10-08",
+   "url": "https://api.worldbank.org/v2/country/UZB;KAZ;KGZ;TJK;GEO;ARM;TUR;POL;ROU;EGY;MAR;NGA;KEN;GHA;ZAF;IND;PAK;BGD;IDN;PHL;VNM;THA;MYS;BRA;MEX;COL;PER;CHL/indicator/FP.CPI.TOTL.ZG"
+  },
+  "NY.GDP.MKTP.KD.ZG": {
+   "file": "wb_NY.GDP.MKTP.KD.ZG_2026-10-29.json",
+   "metadata_file": "wb_NY.GDP.MKTP.KD.ZG_metadata_2026-10-29.json",
+   "records": 728,
+   "lastupdated": "2026-10-08",
+   "url": "https://api.worldbank.org/v2/country/UZB;KAZ;KGZ;TJK;GEO;ARM;TUR;POL;ROU;EGY;MAR;NGA;KEN;GHA;ZAF;IND;PAK;BGD;IDN;PHL;VNM;THA;MYS;BRA;MEX;COL;PER;CHL/indicator/NY.GDP.MKTP.KD.ZG"
+  },
+  "PA.NUS.FCRF": {
+   "file": "wb_PA.NUS.FCRF_2026-10-29.json",
+   "metadata_file": "wb_PA.NUS.FCRF_metadata_2026-10-29.json",
+   "records": 728,
+   "lastupdated": "2026-10-08",
+   "url": "https://api.worldbank.org/v2/country/UZB;KAZ;KGZ;TJK;GEO;ARM;TUR;POL;ROU;EGY;MAR;NGA;KEN;GHA;ZAF;IND;PAK;BGD;IDN;PHL;VNM;THA;MYS;BRA;MEX;COL;PER;CHL/indicator/PA.NUS.FCRF"
+  }
+ },
+ "commodities": {
+  "source": "World Bank Pink Sheet",
+  "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+  "file": "CMO-Historical-Data-Monthly_2026-10-29.xlsx"
+ },
+ "errors": []
+}

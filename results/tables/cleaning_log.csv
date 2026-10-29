@@ -1,0 +1,5 @@
+step,rows
+country-years downloaded,728
+dropped: inflation missing,12
+kept in clean panel,716
+flagged: inflation above 40% (kept),9
